@@ -36,6 +36,7 @@ class servoControl{
 	ledc_channel_t _ledcChannel;
 	unsigned int _min;
 	unsigned int _max;
+	ledc_timer_bit_t _timerResolution;
 	
 	double getDutyByPercentage(double percentage);
 	double getDutyByuS(double uS);
