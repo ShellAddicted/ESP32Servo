@@ -1,0 +1,5 @@
+version: "0.0.1"
+description: C++ Interface to control hobby-grade servo motors compatible with Espressif's ESP32 SoC running esp-idf
+url: https://github.com/ShellAddicted/ESP32Servo.git
+dependencies:
+  idf: ">=4.1"

@@ -28,6 +28,7 @@ double servoControl::getDutyByPercentage(double percentage){
 	if (percentage <= 0){
 		return 0;
 	}
+
 	if (percentage > 100){
 		percentage = 100;
 	}
@@ -49,7 +50,7 @@ void servoControl::attach(gpio_num_t pin, unsigned int minuS, unsigned int maxuS
 	timer_conf.freq_hz    		= _freqHz;
 	timer_conf.speed_mode 		= LEDC_HIGH_SPEED_MODE;
 	timer_conf.timer_num  		= ledcTimer;
-	timer_conf.clk_cfg        = LEDC_AUTO_CLK;
+	timer_conf.clk_cfg          = LEDC_AUTO_CLK;
 	ledc_timer_config(&timer_conf);
 
 	ledc_channel_config_t ledc_conf;

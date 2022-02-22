@@ -1,13 +1,18 @@
-# ESP32Servo [![Build Status](https://travis-ci.org/ShellAddicted/ESP32Servo.svg?branch=master)](https://travis-ci.org/ShellAddicted/ESP32Servo)
-This idf-component permits to control hobby-grade servo motors using an [Espressif's ESP32 SoC](https://www.espressif.com/en/products/hardware/esp32/overview) (running [esp-idf](https://github.com/espressif/esp-idf))
+# ESP32Servo
+C++ Interface to control hobby-grade servo motors compatible with [Espressif's ESP32 SoC](https://www.espressif.com/en/products/hardware/esp32/overview) running [esp-idf](https://github.com/espressif/esp-idf)
 
-Tested with [TowerPro - SG92R](http://www.towerpro.com.tw/product/sg92r-7/) and ESP32D0WDQ6 (DevKitC).
+## Getting Started
+***NOTE: this code is not (yet) Production Ready.***   
 
-# Getting Started
-<b>NOTE: this code is not (yet) Production Ready.</b>  
-You can use this library as a component for your project:  
+You can use this as a [managed-component](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-component-manager.html) for your project by adding the following to your `idf_component.yml`:
+```yaml
+ESP32Servo:
+  path: .
+  git: https://github.com/ShellAddicted/ESP32Servo.git
 ```
-cd <YOUR_PROJECT_ROOT>
+
+Alternatively, you can use this as a component for your project: 
+```bash
 mkdir components/
 cd components/
 git clone https://github.com/ShellAddicted/ESP32Servo.git

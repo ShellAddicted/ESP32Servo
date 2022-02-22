@@ -1,0 +1,18 @@
+ARG IDF_VER=v4.4
+FROM espressif/idf:${IDF_VER}
+
+SHELL ["/bin/bash", "-c"]
+
+WORKDIR /test/
+
+RUN mkdir -p test_app/components/ESP32Servo && \
+    mkdir -p test_app/main/ && \
+    echo -e "cmake_minimum_required(VERSION 3.5)\ninclude(\$ENV{IDF_PATH}/tools/cmake/project.cmake)\nproject(template-app)" > test_app/CMakeLists.txt && \
+    echo -e "idf_component_register(SRCS "main.cpp" INCLUDE_DIRS ".")" > test_app/main/CMakeLists.txt
+
+COPY . test_app/components/ESP32Servo/
+
+RUN cp test_app/components/ESP32Servo/examples/sweep.cpp test_app/main/main.cpp
+WORKDIR /test/test_app/
+RUN source $IDF_PATH/export.sh && \
+    idf.py build
